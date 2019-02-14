@@ -1,0 +1,62 @@
+<html lang="en">
+<head>
+  <title>Bellowwww</title>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/css/bootstrap.min.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/js/bootstrap.min.js"></script>
+  <style>
+      .container {
+  width: 500px;
+  clear: both;
+}
+
+.container input {
+  width: 100%;
+  clear: both;
+}
+
+.container p{
+    color:green;
+}
+  </style>
+</head>
+<body>
+
+<div class="jumbotron text-center">
+  <h1>hello  ${fname}</h1>
+</div>
+
+
+  
+<div class="container">
+    <p>check whether all your information are correct..!!!</p>
+     <table style="width:100%">
+
+  <tr>
+    <td>Your Register number is </td>
+    <td><b>${regno}<b></td>
+  </tr>
+   <tr>
+    <td>Your Email id is </td>
+    <td><b>${mail}<b></td>
+  </tr><br><br>
+   <tr>
+    <td>Your Phone number is </td>
+    <td><b>${phone}<b></td>
+  </tr>
+   <tr>
+    <td>Your Area of interest is </td>
+    <td><b>${aoi}<b></td>
+  </tr>
+   <tr>
+    <td>Your Comments about us cuz why not :) </td>
+    <td><b>${comments}<b></td>
+  </tr>
+  
+
+</table> 
+<h3><a href = "/">Home</a></h3>
+</div>
+
