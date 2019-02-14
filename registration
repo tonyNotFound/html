@@ -1,0 +1,103 @@
+<html lang="en">
+<head>
+<title>Registration</title>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="stylesheet"
+	href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/css/bootstrap.min.css">
+<script
+	src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+<script
+	src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/js/bootstrap.min.js"></script>
+<style>
+.container {
+	width: 500px;
+	clear: both;
+}
+
+.container input {
+	width: 100%;
+	clear: both;
+}
+
+#submit {
+ color: #fff;
+ font-size: 0;
+ width: 135px;
+ height: 60px;
+ border: none;
+ margin: 0;
+ padding: 0;
+ background: #0c0 url(image) 0 0 no-repeat; 
+}
+</style>
+
+<script>
+$(document).ready(function() {
+	  $('#myform').submit(function(e) {
+	    e.preventDefault();
+	    alert("Click OK if you\'re ready to submit the form boi");
+	    var fname = $('#fname').val();
+	    var lname = $('#lname').val();
+	    var phone = $('#phone').val();
+	    var mail = $('#mail').val();
+	    var regno = $('#regno').val();
+	    var aoi = $('#aoi').val();
+	    var comments = $('#comments').val();
+	    var model = /^\d{10}$/;
+	    var model1 = /^\d{12}$/;
+	    $(".error").remove();
+
+	    if (fname.length < 1 ) {
+	      $('#fname').after('<span class="error">First name cannot be empty</span>');
+	    }
+	    if (lname.length < 1) {
+	      $('#lname').after('<span class="error">Second name cannot be empty</span>');
+	    }
+	    if (mail.length < 1) {
+	      $('#mail').after('<span class="error">Nope...! Email id required</span>');
+	    } else {
+	      var regEx = /^[a-z0-9][a-z0-9._%+-]{0,63}@(?:[a-z0-9-]{1,63}\.){1,125}[a-z]{2,63}$/;
+	      var validEmail = regEx.test(mail);
+	      if (!validEmail) {
+	        $('#mail').after('<span class="error">Enter a valid email id</span>');
+	      }
+	    }
+	    if (aoi.length < 1) {
+	      $('#aoi').after('<span class="error"> Kindly full this field </span>');
+	    }
+	    if (!phone.match(model) ){
+	    	$('#phone').after('<span class="error"> You might want to check the phone number you just typed</span>');
+	    }
+	    if (!regno.match(model1)) {
+	    	$('#regno').after('<span class="error">Enter a valid register number</span>');
+	    }
+	    if (comments.length < 20 ){
+	    	$('#comments').after('<span class = "error">You must be a engineer ..aren\'t you? </span>');
+	    }
+	  });
+});
+</script>
+</head>
+<body>
+
+	<div class="jumbotron text-center">
+		<h1>Registration</h1>
+	</div>
+
+	<div class="container">
+		<form id="myform">
+			<b>First name:</b><br> <br> <input type="text" name="fname" id="fname"><br><br>
+			<b>Last name:</b><br> <br> <input type="text" name="lname" id="lname"><br> <br>
+			<b>Phone number:</b><br> <br> <input type="text" name="phone" id ="phone"><br><br>
+			<b>Email:</b> <br><br> <input type="email" name="mail" id="mail"><br><br>
+			<b>Register number:</b> <br> <br> <input type="text" name="regno" id="regno"><br><br>
+			<b>Area of interest:</b> <br> <br> <input type="text" name="aoi" id="aoi"><br><br>
+			<b>Comments :</b> <br> <br> <input type="text" name="comments" id="comments"><br><br>
+			<input type="submit" value="submit" >
+		</form>
+		<h3>
+			<a href="/">Home</a>
+		</h3>
+		
+	</div>
